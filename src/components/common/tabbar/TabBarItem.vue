@@ -36,7 +36,7 @@ export default {
   methods:{
     itemClick(){
       this.$router.push(this.path).catch(err => {})
-      console.log(this.path);
+      // console.log(this.path);
     }
   }
 }
