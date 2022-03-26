@@ -4,6 +4,7 @@
         <div>购物街</div>
     </template></nav-bar>
 
+    <scroll class="content" ref="scroll">
     <home-swiper :banners="banners">
     </home-swiper>
 
@@ -19,6 +20,12 @@
 
     <goods-list :goods ='showGoods'></goods-list>
 
+    </scroll>
+
+
+
+    <back-top @click="backClick"></back-top>
+
   </div>
 </template>
 
@@ -26,12 +33,16 @@
 import NavBar from 'components/common/navbar/NavBar'
 import TabControl from 'components/content/tabControl/TabControl'
 import GoodsList from 'components/content/goods/GoodsList'
+import Scroll from 'components/common/scroll/Scroll'
+import BackTop from 'components/content/backTop/BackTop'
 
 import HomeSwiper from './childrenComps/HomeSwiper.vue'
 import RecommendView from './childrenComps/HomeRecommendView.vue'
 import FeatureView from './childrenComps/FeatureView.vue'
 
+
 import {getHomeMultildata,getHomeGoods} from 'network/home'
+
 
 export default {
   components:{
@@ -40,7 +51,9 @@ export default {
     RecommendView,
     FeatureView,
     TabControl,
-    GoodsList
+    GoodsList,
+    Scroll,
+    BackTop
   },
   data(){
     return {
@@ -78,6 +91,9 @@ export default {
           break
       }
     },
+    backClick(){
+      this.$refs.scroll.scrollTo(0,0)
+    },
     //2.网络请求相关方法
     getHomeMultildata(){
       getHomeMultildata().then(res=>{
@@ -101,7 +117,9 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
+
 
 .home-nav{
   background-color: var(--color-tint);
@@ -116,11 +134,24 @@ export default {
 
 #home{
   padding-top: 44px;
+  position: relative;
+  height: 100vh;
 }
 
 .tab-control{
   position: sticky;
   top: 44px;
+}
+
+.content{
+  /* height:calc(100% - 54px) ; */
+  overflow: hidden;
+
+  position: absolute;
+  top: 44px;
+  bottom: 49px;
+  left: 0;
+  right: 0;
 }
 
 
