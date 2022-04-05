@@ -37,12 +37,13 @@
       </tab-bar-item>
 
       <tab-bar-item path='/profile'>
-       <template v-slot:item-icon>
+        <template v-slot:item-icon>
             <img src="~assets/img/tabbar/profile.svg" alt="">
           </template>
           <template v-slot:item-icon-active>
             <img src="~assets/img/tabbar/profile_active.svg" alt="">
           </template>
+          
           <template v-slot:item-text>
             <div>我的</div> 
           </template>

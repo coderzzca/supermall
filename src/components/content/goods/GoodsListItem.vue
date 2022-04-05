@@ -1,6 +1,6 @@
 <template>
-  <div class="goods-item">
-    <img :src="goodsItem.show.img" alt="">
+  <div class="goods-item" @click="itemClick">
+    <img :src="goodsItem.show.img" alt="" >
     <div class="goods-info">
       <p>{{goodsItem.title}}</p>
       <span class="price">{{goodsItem.price}}</span>
@@ -17,6 +17,17 @@ export default {
       default(){
         return {}
       }
+    }
+  },
+  methods:{
+    itemClick(){
+      // this.$router.push('/detail')
+      this.$router.push({
+        path:'/detail',
+        query:{
+          iid:this.goodsItem.iid
+        }
+      })
     }
   }
 }
@@ -60,13 +71,13 @@ export default {
     position: relative;
   }
 
-  .goods-info .collect::before{
-    content: '';
-    position: absolute;
-    left: -15px;
-    top: -1px;
-    width: 14px;
-    height: 14px;
-    background: url('~assets/img/common/collect.svg') 0 0/14px 14px;
-  }
+    .goods-info .collect::before{
+      content: '';
+      position: absolute;
+      left: -15px;
+      top: -1px;
+      width: 14px;
+      height: 14px;
+      background: url('~assets/img/common/collect.svg') 0 0/14px 14px;
+    }
 </style>

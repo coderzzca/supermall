@@ -121,19 +121,19 @@ export default {
     // })
 
     this.scroll = new BScroll(document.querySelector('.wrapper'),{
-      probeType:0,
-      click:true,
-      pullUpLoad:true
+      // probeType:0,
+      // click:true,
+      // pullUpLoad:true
 
     })
 
-    this.scroll.on('scroll',(position)=>{
+    // this.scroll.on('scroll',(position)=>{
       
-    })
+    // })
 
-    this.scroll.on('pullingUp',()=>{
-      console.log('上拉加载更多');
-    })
+    // this.scroll.on('pullingUp',()=>{
+    //   console.log('上拉加载更多');
+    // })
   },
   methods:{
     btnClick(){
@@ -149,6 +149,6 @@ export default {
   .wrapper{
     background-color: #bfa;
     height: 150px;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
 </style>

@@ -19,7 +19,7 @@
     props: {
       interval: {
 		    type: Number,
-        default: 3000
+        default: 1000
       },
       animDuration: {
 		    type: Number,
@@ -50,7 +50,7 @@
 
         // 2.开启定时器
         this.startTimer();
-      }, 3000)
+      }, 1000)
     },
     methods: {
 		  /**
@@ -119,7 +119,7 @@
 		  handleDom: function () {
         // 1.获取要操作的元素
         let swiperEl = document.querySelector('.swiper');
-        let slidesEls = swiperEl.getElementsByClassName('slide');
+        let slidesEls = swiperEl ? swiperEl.getElementsByClassName('slide') :Object;
 
         // 2.保存个数
         this.slideCount = slidesEls.length;
