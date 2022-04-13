@@ -26,7 +26,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   .de-swiper{
     height: 350px;
     overflow: hidden;

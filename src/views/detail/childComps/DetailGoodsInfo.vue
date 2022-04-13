@@ -32,17 +32,17 @@
   },
   methods: {
     imageLoad(){
-      console.log('图片加载完成一张');
-      if ( ++this.counter === this.imagesLength ){
-        this.$emit("imageLoad")
-      }
+      // if ( ++this.counter === this.imagesLength ){
+      //   this.$emit("imageLoad")
+      // }
+      this.$emit("imageLoad")
     }
   },
   watch:{
-    detailInfo(){
-      //获取图片的个数
-      this.imagesLength = this.detailInfo.detailImage[0].list.length
-    }
+    // detailInfo(){
+    //   //获取图片的个数
+    //   this.imagesLength = this.detailInfo.detailImage[0].list.length
+    // }
   }
  }
 </script>

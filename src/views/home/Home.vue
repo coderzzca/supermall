@@ -3,6 +3,9 @@
     <nav-bar class="home-nav"><template v-slot:center>
         <div>购物街</div>
     </template></nav-bar>
+    <div class="my-home-img" v-show="showFunny">
+      <img src="~assets/img/home/my-home.gif" alt="">
+    </div>
 
     <tab-control 
     :titles="['流行','新款','精选']"
@@ -48,7 +51,6 @@ import NavBar from 'components/common/navbar/NavBar'
 import TabControl from 'components/content/tabControl/TabControl'
 import GoodsList from 'components/content/goods/GoodsList'
 import Scroll from 'components/common/scroll/Scroll'
-import BackTop from 'components/content/backTop/BackTop'
 
 import HomeSwiper from './childrenComps/HomeSwiper.vue'
 import RecommendView from './childrenComps/HomeRecommendView.vue'
@@ -56,6 +58,7 @@ import FeatureView from './childrenComps/FeatureView.vue'
 
 
 import {getHomeMultildata,getHomeGoods} from 'network/home'
+import {backTopMixin} from 'common/mixin'
 
 
 export default {
@@ -67,8 +70,8 @@ export default {
     TabControl,
     GoodsList,
     Scroll,
-    BackTop
   },
+  mixins:[backTopMixin],
   data(){
     return {
       banners:[],
@@ -79,22 +82,23 @@ export default {
         'sell':{page:0,list:[]},
       },
       currentType:'pop',
-      isShowBackTop:false,
       tabOffsetTop:0,
       isTabFixed:false,
-      saveY:0
+      saveY:0,
+      showFunny:true
     }
   },
   activated(){
-    // console.log(this.saveY);
+   
     this.$refs.scroll.scrollTo(0,this.saveY,100)
     this.$refs.scroll.scroll.refresh()
   },
   deactivated(){
+    //1.保存Y值
     this.saveY = this.$refs.scroll.getScrollY()
   },
   created(){
-    console.log('home 创建了');
+
     //1.请求多个数据
     this.getHomeMultildata()
 
@@ -104,6 +108,8 @@ export default {
     this.getHomeGoods('sell')
   },
   mounted(){
+    
+ 
     //1.获取tabControl的offsetTop
     //所有的组件都有一个属性$el :用于获取组件中的元素
     // setTimeout(()=>{
@@ -130,15 +136,15 @@ export default {
       this.$refs.tabControl1.currentIndex = index
       this.$refs.tabControl2.currentIndex = index
     },
-    backClick(){
-      this.$refs.scroll.scrollTo(0,0)
-    },
     contentScroll(position){
       //1.判断backTop 是否显示
       this.isShowBackTop = -(position.y) > 1000
 
       //2.决定tabCountrol 是否吸顶
       this.isTabFixed = (-position.y) > this.tabOffsetTop
+
+      //设置滑稽滚动后就不显示
+      this.showFunny = !((-position.y) > 50)
     },
     loadMore(){
       this.getHomeGoods(this.currentType)
@@ -217,6 +223,14 @@ export default {
 .tab-control{
   position: relative;
   z-index: 9;
+}
+
+.my-home-img img{
+  position: fixed;
+  z-index: 0;
+  width: 100px;
+  height: 100px;
+  left: 36%;
 }
 
 

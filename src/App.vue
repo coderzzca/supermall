@@ -4,7 +4,7 @@
    
 
     <router-view v-slot='{Component}'>
-      <keep-alive>
+      <keep-alive exclude="Detail">
         <component :is="Component" :key="$route.name"></component>
       </keep-alive>
     </router-view>

@@ -31,6 +31,9 @@ export default {
       click:true,
       observeDOM:true,
       observeImage: true,
+      mouseWheel: true,//启用滑轮滚动
+      disableMouse: true,//启用鼠标拖动
+      disableTouch: false,
       probeType:this.probeType,
       pullUpLoad:this.pullUpLoad 
     })
@@ -60,6 +63,6 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>
