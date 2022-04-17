@@ -1,109 +1,59 @@
 <template>
-<div>
-  <scroll class="content" :probe-type='2'>
-    <ul>
-      <li>1信息</li>
-      <li>2信息</li>
-      <li>3信息</li>
-      <li>4信息</li>
-      <li>5信息</li>
-      <li>6信息</li>
-      <li>7信息</li>
-      <li>8信息</li>
-      <li>9信息</li>
-      <li>10信息</li>
-      <li>11信息</li>
-      <li>12信息</li>
-      <li>13信息</li>
-      <li>14信息</li>
-      <li>15信息</li>
-      <li>16信息</li>
-      <li>17信息</li>
-      <li>18信息</li>
-      <li>19信息</li>
-      <li>20信息</li>
-      <li>21信息</li>
-      <li>22信息</li>
-      <li>23信息</li>
-      <li>24信息</li>
-      <li>25信息</li>
-      <li>26信息</li>
-      <li>27信息</li>
-      <li>28信息</li>
-      <li>29信息</li>
-      <li>30信息</li>
-      <li>31信息</li>
-      <li>32信息</li>
-      <li>33信息</li>
-      <li>34信息</li>
-      <li>35信息</li>
-      <li>36信息</li>
-      <li>37信息</li>
-      <li>38信息</li>
-      <li>39信息</li>
-      <li>40信息</li>
-      <li>41信息</li>
-      <li>42信息</li>
-      <li>43信息</li>
-      <li>44信息</li>
-      <li>45信息</li>
-      <li>46信息</li>
-      <li>47信息</li>
-      <li>48信息</li>
-      <li>49信息</li>
-      <li>50信息</li>
-      <li>51信息</li>
-      <li>52信息</li>
-      <li>53信息</li>
-      <li>54信息</li>
-      <li>55信息</li>
-      <li>56信息</li>
-      <li>57信息</li>
-      <li>58信息</li>
-      <li>59信息</li>
-      <li>60信息</li>
-      <li>61信息</li>
-      <li>62信息</li>
-      <li>63信息</li>
-      <li>64信息</li>
-      <li>65信息</li>
-      <li>66信息</li>
-      <li>67信息</li>
-      <li>68信息</li>
-      <li>69信息</li>
-      <li>70信息</li>
-      <li>71信息</li>
-      <li>72信息</li>
-      <li>73信息</li>
-      <li>74信息</li>
-      <li>75信息</li>
-      <li>76信息</li>
-      <li>77信息</li>
-      <li>78信息</li>
-      <li>79信息</li>
-      <li>80信息</li>
-      <li>81信息</li>
-      <li>82信息</li>
-      <li>83信息</li>
-      <li>84信息</li>
-      <li>85信息</li>
-      <li>86信息</li>
-      <li>87信息</li>
-      <li>88信息</li>
-      <li>89信息</li>
-      <li>90信息</li>
-      <li>91信息</li>
-      <li>92信息</li>
-      <li>93信息</li>
-      <li>94信息</li>
-      <li>95信息</li>
-      <li>96信息</li>
-      <li>97信息</li>
-      <li>98信息</li>
-      <li>99信息</li>
-      <li>100信息</li>
-    </ul>
- </scroll>
+<div class="profile">
+  <nav-bar class="profile-navbar">
+    <template v-slot:center>
+      <div>我的档案</div>
+    </template>
+  </nav-bar>
+
+  <div class="login-registration">
+    <div class="profile-picture">
+      <img src="~assets/img/profile/iu.webp" alt="">
+    </div>
+    <div class="login-regist">
+      <div class="login-regist-one">IU,欢迎回来~</div>
+    </div>
+  </div>
+
+  <div class="count-info">
+    <div>
+      <div class="count-info-span"><span>0.00</span>元</div>
+      <div>我的余额</div>
+    </div>
+    <div>
+      <div class="count-info-span"><span>0</span>个</div>
+      <div>我的优惠</div>
+    </div>
+    <div>
+      <div class="count-info-span"><span>0</span>分</div>
+      <div>我的积分</div>
+    </div>
+  </div>
+
+  <div class="mess-mall-vip-cart-app">
+      <div>
+        <img src="~/assets/img/profile/message.svg" alt="">
+        <span>我的消息</span>
+      </div>
+      <div>
+        <img src="~/assets/img/profile/pointer.svg" alt="">
+        <span>积分商城</span>
+      </div>
+      <div class="vip">
+        <img src="~/assets/img/profile/vip.svg" alt="">
+        <span>会员卡</span>
+      </div>
+      <div>
+        <img src="~/assets/img/profile/cart.svg" alt="">
+        <span>我的购物车</span>
+      </div>
+      <div>
+        <img src="~/assets/img/profile/shopping.svg" alt="">
+        <span>下载购物APP</span>
+      </div>
+    </div>
+  
+  
 </div>
 
 
@@ -111,18 +61,79 @@
 </template>
 
 <script>
-import Scroll from 'components/common/scroll/Scroll'
+import NavBar from 'components/common/navbar/NavBar'
 export default {
   components:{
-    Scroll
+    NavBar
   }
 }
 </script>
 
 <style scoped>
-  .content{
-    height: 150px;
-    background-color: #bfa;
-    overflow: hidden;
+  .profile-navbar{
+    font-size: 18px;
+    text-align: center;
+    color: rgb(240, 234, 234);
+    background-color: rgb(255,141,150);
+    border-bottom: 1px solid rgb(223, 168, 168);
+  } 
+
+  .login-registration{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(255,141,150);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: rgb(240, 234, 234);
+  }
+
+  .profile-picture img{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+  }
+
+  .login-regist{
+    margin-right: 20px;
+  }
+
+  .count-info{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+
+    width: 100%;
+    height: 100px;
+    font-size: 16px;
+    border-bottom: rgb(248, 247, 247) solid 8px;
+  }
+
+  .count-info span{
+    font-size: 20px;
+    color: red;
+  }
+
+  .count-info-span{
+    margin-bottom: 5px;
+  }
+
+  .mess-mall-vip-cart-app div{
+    height: 40px;
+    width: 100%;
+    line-height: 40px;
+    padding-left: 10px;
+    border-top: rgb(241, 234, 234) solid 1px;
+  }
+  .mess-mall-vip-cart-app img{
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+  .mess-mall-vip-cart-app .vip{
+    height: 48px;
+    border-bottom: rgb(248, 247, 247) solid 8px;
   }
 </style>

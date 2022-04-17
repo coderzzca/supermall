@@ -34,6 +34,11 @@ const routes=[
     path:'/detail',
     component:()=>import('../views/detail/Detail')
   },
+  {
+    name:'login',
+    path:'/login',
+    component:()=>import('../components/common/login/Login')
+  }
 ]
 
 const router = createRouter({

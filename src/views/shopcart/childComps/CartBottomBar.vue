@@ -45,7 +45,7 @@ export default {
         return item.checked
       }).reduce((preValue,item)=>{
         return preValue + item.price * item.count
-      },0)
+      },0).toFixed(2)
     },
     checkedLength(){
       return this.$store.state.cartList.filter( item => item.checked).length

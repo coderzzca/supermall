@@ -35,7 +35,7 @@ export default {
       disableMouse: true,//启用鼠标拖动
       disableTouch: false,
       probeType:this.probeType,
-      pullUpLoad:this.pullUpLoad 
+      pullUpLoad:this.pullUpLoad
     })
 
     //2.监听滚动的位置

@@ -153,7 +153,9 @@ export default {
       }
     },
     swiperImageLoad(){
-      this.tabOffsetTop = this.$refs.tabControl2.$el.offsetTop
+      setTimeout(()=>{
+        this.tabOffsetTop = this.$refs.tabControl2.$el.offsetTop
+      },500)
     },
     //2.网络请求相关方法
     getHomeMultildata(){

@@ -36,7 +36,7 @@
           </template>
       </tab-bar-item>
 
-      <tab-bar-item path='/profile'>
+      <tab-bar-item path='/login'>
         <template v-slot:item-icon>
             <img src="~assets/img/tabbar/profile.svg" alt="">
           </template>

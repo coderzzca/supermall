@@ -182,7 +182,7 @@ export default {
       this.addCart(product).then(res=>{
         this.isShow = true
         this.message = res
-        console.log(this.show,this.message);
+        console.log(this.isShow,this.message);
 
         setTimeout(()=>{
           this.isShow = false
